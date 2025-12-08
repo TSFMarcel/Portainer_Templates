@@ -33,6 +33,8 @@ services:
     volumes:
       - vw_data:/data
     restart: unless-stopped
+    depends_on:
+      - postgres
 
   npm:
     image: jc21/nginx-proxy-manager:latest
