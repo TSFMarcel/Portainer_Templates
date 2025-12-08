@@ -13,6 +13,7 @@ services:
     restart: unless-stopped
 
   vaultwarden:
+    container_name: vaultwarden
     image: vaultwarden/server:latest
     environment:
       DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}"
