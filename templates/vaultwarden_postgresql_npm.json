@@ -6,6 +6,7 @@
       "description": "Vaultwarden mit PostgreSQL in internem Netzwerk, Nginx Proxy Manager für Webzugriff, Ports 80/443/81 exposed.",
       "platform": "linux",
       "categories": ["security", "password-manager", "proxy"],
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
       "repository": {
         "url": "https://github.com/TSFMarcel/Portainer_Templates",
         "stackfile": "vaultwarden/docker-compose.yml"
