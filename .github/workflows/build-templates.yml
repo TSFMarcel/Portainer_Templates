@@ -9,17 +9,23 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      # Checkout des Repos
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # wichtig für Push
 
+      # Node.js Setup für jq
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # Installiere jq
       - name: Install jq
         run: sudo apt-get install -y jq
 
+      # Merge Templates
       - name: Merge templates and generate portainer-master-template.json
         run: |
           mkdir -p generated
@@ -27,14 +33,17 @@ jobs:
           echo '{ "version": "2", "templates": [] }' > $OUTPUT_FILE
           id=1
           for file in templates/*.json; do
-            while read -r tmpl; do
-              echo "$tmpl" | jq ". + {id: $id}" > tmp.json
-              jq ".templates += [$(cat tmp.json)]" $OUTPUT_FILE > tmp2.json
-              mv tmp2.json $OUTPUT_FILE
-              id=$((id+1))
-            done < <(jq -c '.templates[]' "$file")
+            if [ -f "$file" ]; then
+              while read -r tmpl; do
+                echo "$tmpl" | jq ". + {id: $id}" > tmp.json
+                jq ".templates += [$(cat tmp.json)]" $OUTPUT_FILE > tmp2.json
+                mv tmp2.json $OUTPUT_FILE
+                id=$((id+1))
+              done < <(jq -c '.templates[]' "$file")
+            fi
           done
 
+      # Commit nur wenn sich etwas geändert hat
       - name: Commit generated file if changed
         uses: EndBug/add-and-commit@v9
         with:
@@ -42,3 +51,5 @@ jobs:
           message: "Update portainer-master-template.json"
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
+          push: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
