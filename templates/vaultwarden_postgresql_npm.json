@@ -39,13 +39,13 @@
         {
           "name": "PUSH_ENABLED",
           "label": "Push Notification (z.B. Smartphone) einschalten.",
-          "default": "true",
+          "default": "false",
           "description": "Achtung hierfür wird eine ID und ein KEY, diesen bekommt man hier: https://bitwarden.com/host/"
         },
         {
           "name": "PUSH_INSTALLATION_ID",
           "label": "Notification ID wie erwähnt.",
-          "default": "true",
+          "default": "",
           "description": "Zu bekommen hier: https://bitwarden.com/host/"
         },
         {
@@ -71,18 +71,6 @@
           "label": "Öffentlicher Domainname der verwendet werden soll.",
           "default": "https://passwordmanager.domain.de",
           "description": "Muss mit https:// eingetragen werden."
-        },
-        {
-          "name": "NPM_ADMIN_EMAIL",
-          "label": "Nginx Proxy Manager Admin Email",
-          "default": "admin@example.com",
-          "description": "E-Mail für Nginx Proxy Manager Admin."
-        },
-        {
-          "name": "NPM_ADMIN_PASSWORD",
-          "label": "Nginx Proxy Manager Admin Passwort",
-          "default": "changeme",
-          "description": "Starkes Passwort für Nginx Proxy Manager."
         }
       ],
       "administrator_only": true
