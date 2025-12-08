@@ -1,0 +1,44 @@
+name: Build Portainer Templates
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Merge templates and generate portainer-master-template.json
+        run: |
+          mkdir -p generated
+          OUTPUT_FILE="generated/portainer-master-template.json"
+          echo '{ "version": "2", "templates": [] }' > $OUTPUT_FILE
+          id=1
+          for file in templates/*.json; do
+            while read -r tmpl; do
+              echo "$tmpl" | jq ". + {id: $id}" > tmp.json
+              jq ".templates += [$(cat tmp.json)]" $OUTPUT_FILE > tmp2.json
+              mv tmp2.json $OUTPUT_FILE
+              id=$((id+1))
+            done < <(jq -c '.templates[]' "$file")
+          done
+
+      - name: Commit generated file if changed
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "generated/portainer-master-template.json"
+          message: "Update portainer-master-template.json"
+          author_name: "github-actions[bot]"
+          author_email: "github-actions[bot]@users.noreply.github.com"
