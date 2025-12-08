@@ -1,1 +1,96 @@
-{ "version": "2", "templates": [] }
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 3,
+      "title": "Vaultwarden + PostgreSQL + Nginx Proxy Manager",
+      "description": "Vaultwarden mit PostgreSQL in internem Netzwerk, Nginx Proxy Manager für Webzugriff, Ports 80/443/81 exposed.",
+      "platform": "linux",
+      "categories": [
+        "security",
+        "password-manager",
+        "proxy"
+      ],
+      "repository": {
+        "url": "https://github.com/TSFMarcel/Portainer_Templates",
+        "stackfile": "vaultwarden/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "POSTGRES_USER",
+          "label": "PostgreSQL USER",
+          "default": "vaultwarden_user",
+          "description": "Benutzername für die Datenbank."
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "PostgreSQL Datenbank",
+          "default": "vaultwarden_db",
+          "description": "Datenbankname der festgelegt werden soll."
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "PostgreSQL Password",
+          "default": "vaultwardenpass",
+          "description": "Starkes Passwort für die Datenbank."
+        },
+        {
+          "name": "ADMIN_TOKEN",
+          "label": "Vaultwarden Admin Token",
+          "default": "changeme",
+          "description": "Admin-Token für Vaultwarden. Nicht hardcoded lassen!"
+        },
+        {
+          "name": "PUSH_ENABLED",
+          "label": "Push Notification (z.B. Smartphone) einschalten.",
+          "default": "true",
+          "description": "Achtung hierfür wird eine ID und ein KEY, diesen bekommt man hier: https://bitwarden.com/host/"
+        },
+        {
+          "name": "PUSH_INSTALLATION_ID",
+          "label": "Notification ID wie erwähnt.",
+          "default": "true",
+          "description": "Zu bekommen hier: https://bitwarden.com/host/"
+        },
+        {
+          "name": "PUSH_INSTALLATION_KEY",
+          "label": "Notification KEY wie erwähnt.",
+          "default": "",
+          "description": "Zu bekommen hier: https://bitwarden.com/host/"
+        },
+        {
+          "name": "PUSH_RELAY_URI",
+          "label": "Push Relay URI",
+          "default": "https://api.bitwarden.eu",
+          "description": "Sollte immer https://api.bitwarden.eu sein"
+        },
+        {
+          "name": "PUSH_IDENTITY_URI",
+          "label": "Push Identity URI",
+          "default": "https://identity.bitwarden.eu",
+          "description": "Sollte immer https://identity.bitwarden.eu sein"
+        },
+        {
+          "name": "DOMAIN_VAULTWARDEN",
+          "label": "Öffentlicher Domainname der verwendet werden soll.",
+          "default": "https://passwordmanager.domain.de",
+          "description": "Muss mit https:// eingetragen werden."
+        },
+        {
+          "name": "NPM_ADMIN_EMAIL",
+          "label": "Nginx Proxy Manager Admin Email",
+          "default": "admin@example.com",
+          "description": "E-Mail für Nginx Proxy Manager Admin."
+        },
+        {
+          "name": "NPM_ADMIN_PASSWORD",
+          "label": "Nginx Proxy Manager Admin Passwort",
+          "default": "changeme",
+          "description": "Starkes Passwort für Nginx Proxy Manager."
+        }
+      ],
+      "administrator_only": true,
+      "id": 1
+    }
+  ]
+}
