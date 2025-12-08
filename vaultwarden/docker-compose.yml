@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   postgres:
     image: postgres:16
@@ -12,10 +13,11 @@ services:
       - db_data:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
-    test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
-    interval: 5s
-    timeout: 5s
-    retries: 5
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   vaultwarden:
     container_name: vaultwarden
@@ -32,7 +34,6 @@ services:
       TMP_FOLDER: "data/tmp"
       ENABLE_WEBSOCKET: true
       DOMAIN: "${DOMAIN_VAULTWARDEN}"
-
     networks:
       db_net: {}
       nginx-proxy-network:
@@ -40,8 +41,8 @@ services:
       - vw_data:/data
     restart: unless-stopped
     depends_on:
-    postgres:
-      condition: service_healthy
+      postgres:
+        condition: service_healthy
 
   npm:
     image: jc21/nginx-proxy-manager:latest
