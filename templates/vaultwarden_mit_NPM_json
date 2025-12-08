@@ -5,7 +5,7 @@
   "platform": "linux",
   "categories": ["security", "password-manager", "proxy"],
   "repository": {
-    "url": "https://github.com/DEIN_USER/DEIN_REPO",
+    "url": "https://github.com/TSFMarcel/Portainer_Templates",
     "stackfile": "vaultwarden/docker-compose.yml"
   },
   "env": [
