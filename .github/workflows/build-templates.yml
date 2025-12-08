@@ -9,23 +9,23 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      # Checkout des Repos
+      # Checkout mit PAT
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # wichtig für Push
+          token: ${{ secrets.REPO_TOKEN }}
 
-      # Node.js Setup für jq
+      # Node.js Setup (falls jq Node-Version benötigt)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Installiere jq
+      # jq installieren
       - name: Install jq
-        run: sudo apt-get install -y jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
-      # Merge Templates
+      # Templates zusammenführen und IDs vergeben
       - name: Merge templates and generate portainer-master-template.json
         run: |
           mkdir -p generated
@@ -33,18 +33,16 @@ jobs:
           echo '{ "version": "2", "templates": [] }' > $OUTPUT_FILE
           id=1
           for file in templates/*.json; do
-            if [ -f "$file" ]; then
-              while read -r tmpl; do
-                echo "$tmpl" | jq ". + {id: $id}" > tmp.json
-                jq ".templates += [$(cat tmp.json)]" $OUTPUT_FILE > tmp2.json
-                mv tmp2.json $OUTPUT_FILE
-                id=$((id+1))
-              done < <(jq -c '.templates[]' "$file")
-            fi
+            while read -r tmpl; do
+              echo "$tmpl" | jq ". + {id: $id}" > tmp.json
+              jq ".templates += [$(cat tmp.json)]" $OUTPUT_FILE > tmp2.json
+              mv tmp2.json $OUTPUT_FILE
+              id=$((id+1))
+            done < <(jq -c '.templates[]' "$file")
           done
 
-      # Commit nur wenn sich etwas geändert hat
-      - name: Commit generated file if changed
+      # Commit und Push, nur wenn sich etwas geändert hat
+      - name: Commit and push generated file
         uses: EndBug/add-and-commit@v9
         with:
           add: "generated/portainer-master-template.json"
