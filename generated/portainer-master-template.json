@@ -13,7 +13,7 @@
       ],
       "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/bitwarden.png",
       "repository": {
-        "url": "https://github.com/TSFMarcel/Portainer_Templates",
+        "url": "https://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@github.com/TSFMarcel/Portainer_Templates",
         "stackfile": "vaultwarden/docker-compose.yml"
       },
       "env": [
