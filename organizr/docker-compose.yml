@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  organizr:
+    image: organizr/organizr:${BRANCH}
+    container_name: organizr
+    restart: unless-stopped
+    networks:
+      - nginx-proxy-network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - fpm=${FPM}
+      - branch=${BRANCH}
+      - DOMAIN=${DOMAIN_ORGANIZR}
+    ports:
+      - "80:80"
+    volumes:
+      # Persistente Konfiguration
+      - organizr_data:/config
+      # Optional: Weitere Bind‑Mounts (z. B. für Medien)
+      # - /path/to/media:/media:ro
+
+volumes:
+  organizr_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/volumes/organizr/data
+
+networks:
+  nginx-proxy-network:
+    external: true
