@@ -3,6 +3,50 @@
   "templates": [
     {
       "type": 3,
+      "title": "Borg‑UI Backup Manager",
+      "description": "Borg‑UI für die einfache Verwaltung von Backups – mit nginx‑proxy‑network und persistenten Volumes.",
+      "platform": "linux",
+      "categories": [
+        "backup",
+        "storage",
+        "utilities"
+      ],
+      "logo": "",
+      "repository": {
+        "url": "https://github.com/TSFMarcel/Portainer_Templates",
+        "stackfile": "borg-ui/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Zeitzone",
+          "default": "Europe/Berlin",
+          "description": "Die Zeitzone, z.B. Europe/Berlin."
+        },
+        {
+          "name": "PUID",
+          "label": "Benutzer‑ID (PUID)",
+          "default": "1000",
+          "description": "UID des Benutzers, unter dem der Container läuft."
+        },
+        {
+          "name": "PGID",
+          "label": "Gruppen‑ID (PGID)",
+          "default": "1000",
+          "description": "GID der Gruppe, unter der der Container läuft."
+        },
+        {
+          "name": "BORG_LOCAL_PATH",
+          "label": "Lokaler Pfad zum Sichern",
+          "default": "/home/yourusername",
+          "description": "Pfad zu den Ordnern, die gesichert werden sollen. Der Pfad muss auf dem Host existieren."
+        }
+      ],
+      "administrator_only": true,
+      "id": 1
+    },
+    {
+      "type": 3,
       "title": "NGINX‑Proxy‑Manager (Web‑GUI)",
       "description": "NGINX Proxy Manager – UI zur Verwaltung von Reverse‑Proxies, SSL‑Zertifikaten und DNS‑Einträgen. Der Container erzeugt selbst das benötigte Netzwerk `nginx-proxy-network`, sodass alle weiteren Web‑GUI‑Container problemlos darauf zugreifen können. Die Volumes werden unter `/mnt/volumes/nginx-proxy-manager` abgelegt, damit Ihre Konfiguration und Zertifikate stets persistent bleiben.",
       "platform": "linux",
@@ -19,7 +63,7 @@
       "env": [],
       "administrator_only": true,
       "predeploy": "docker network create nginx-proxy-network || true",
-      "id": 1
+      "id": 2
     },
     {
       "type": 3,
@@ -105,7 +149,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 2
+      "id": 3
     },
     {
       "type": 3,
@@ -185,7 +229,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 3
+      "id": 4
     }
   ]
 }
