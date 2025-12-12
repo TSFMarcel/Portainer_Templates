@@ -3,7 +3,7 @@
     {
       "type": 3,
       "title": "Organizr (Web‑Interface für Medien‑Home‑Server)",
-      "description": "Organizr – zentrales Dashboard für deine Heim‑/Home‑Server‑Services. Nutzt nginx‑proxy‑network und ein persistentes /config‑Volume.",
+      "description": "Organizr – zentrales Dashboard für deine Heim‑/Home‑Server‑Services. Nutzt nginx‑proxy‑network und ein persistentes /config‑Volume. Default lauscht der Container auf Port 80",
       "platform": "linux",
       "categories": ["media", "dashboard", "utilities"],
       "logo": "",
@@ -35,6 +35,12 @@
           "label": "Git‑Branch / Version",
           "default": "v2-master",
           "description": "Branch/Tag, der beim Pull aus dem Docker‑Repository benutzt wird."
+        },
+        {
+          "name": "PORT80",
+          "label": "WebGUI Port 80",
+          "default": "80",
+          "description": "WebGUI Port 80 Mapping"
         }
       ],
       "administrator_only": true
