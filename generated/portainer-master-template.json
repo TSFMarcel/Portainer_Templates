@@ -72,6 +72,18 @@
           "label": "Lokaler Pfad zum Sichern",
           "default": "/home/yourusername",
           "description": "Pfad zu den Ordnern, die gesichert werden sollen. Der Pfad muss auf dem Host existieren."
+        },
+        {
+          "name": "VMIP",
+          "label": "IP der Virtuellen Maschine",
+          "default": "192.168.1.2",
+          "description": "IP der Virtuellen Maschine für Portmapping"
+        },
+        {
+          "name": "PORT8081",
+          "label": "WebGUI Port 8081",
+          "default": "8081",
+          "description": "Portmapping für Port 8081 WebGUI"
         }
       ],
       "administrator_only": true,
