@@ -14,7 +14,7 @@
       "env": [
       ],
       "administrator_only": true,
-      "predeploy": "docker network create nginx-proxy-network || true
+      "predeploy": "docker network create nginx-proxy-network || true"
     }
   ]
 }
