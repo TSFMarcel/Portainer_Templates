@@ -3,6 +3,25 @@
   "templates": [
     {
       "type": 3,
+      "title": "AdGuard Home – DNS‑/Firewall‑Proxy",
+      "description": "AdGuard Home für DNS‑Blocking, Netzwerk‑Filtern und Web‑Interface. Nutzt das externe nginx‑proxy‑network.",
+      "platform": "linux",
+      "categories": [
+        "dns",
+        "firewall",
+        "networking"
+      ],
+      "logo": "",
+      "repository": {
+        "url": "https://github.com/TSFMarcel/Portainer_Templates",
+        "stackfile": "adguard/docker-compose.yml"
+      },
+      "env": [],
+      "administrator_only": true,
+      "id": 1
+    },
+    {
+      "type": 3,
       "title": "Borg‑UI Backup Manager",
       "description": "Borg‑UI für die einfache Verwaltung von Backups – mit nginx‑proxy‑network und persistenten Volumes. In Nginx-Proxy-Manager einzubinden mit Containername:Port (in der Regel borg-web-ui:8081) Default Credentials admin / admin123",
       "platform": "linux",
@@ -43,7 +62,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 1
+      "id": 2
     },
     {
       "type": 3,
@@ -63,7 +82,7 @@
       "env": [],
       "administrator_only": true,
       "predeploy": "docker network create nginx-proxy-network || true",
-      "id": 2
+      "id": 3
     },
     {
       "type": 3,
@@ -107,7 +126,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 3
+      "id": 4
     },
     {
       "type": 3,
@@ -193,7 +212,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 4
+      "id": 5
     },
     {
       "type": 3,
@@ -273,7 +292,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 5
+      "id": 6
     }
   ]
 }
