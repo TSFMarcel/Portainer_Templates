@@ -17,6 +17,12 @@
           "label": "IP der Virtuellen Maschine",
           "default": "192.168.1.2",
           "description": "IP der Virtuellen Maschine für Portmapping"
+        },
+        {
+          "name": "PORT3000",
+          "label": "WebGUI Port 3000",
+          "default": "3000",
+          "description": "Portmapping für Port 3000"
         }
       ],
       "administrator_only": true
