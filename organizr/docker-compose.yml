@@ -8,10 +8,10 @@ services:
     networks:
       - nginx-proxy-network
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - fpm=${FPM}
-      - branch=${BRANCH}
+      - PUID: "${PUID}"
+      - PGID: "${PGID}"
+      - fpm: "${FPM}"
+      - BRANCH: "v2"
     ports:
       - "${VMIP}:${PORT80}:80/tcp"
     volumes:
