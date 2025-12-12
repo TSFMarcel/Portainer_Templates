@@ -92,7 +92,32 @@
         "url": "https://github.com/TSFMarcel/Portainer_Templates",
         "stackfile": "nginx-proxy-manager/docker-compose.yml"
       },
-      "env": [],
+      "env": [
+        {
+          "name": "VMIP",
+          "label": "IP der Virtuellen Maschine",
+          "default": "192.168.1.2",
+          "description": "IP der Virtuellen Maschine für Portmapping"
+        },
+        {
+          "name": "PORT80",
+          "label": "Proxy Port 80",
+          "default": "80",
+          "description": "Portmapping für Port 80"
+        },
+        {
+          "name": "PORT443",
+          "label": "Proxy Port 443",
+          "default": "443",
+          "description": "Portmapping für Port 443"
+        },
+        {
+          "name": "PORT81",
+          "label": "WebGUI Port 81",
+          "default": "81",
+          "description": "Portmapping für WebGUI Port 81"
+        }
+      ],
       "administrator_only": true,
       "predeploy": "docker network create nginx-proxy-network || true",
       "id": 3
