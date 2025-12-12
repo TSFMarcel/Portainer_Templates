@@ -39,8 +39,8 @@ services:
       ENABLE_WEBSOCKET: true
       DOMAIN: "${DOMAIN_VAULTWARDEN}"
     networks:
-      - db_net_vaultwarden
-      - nginx-proxy-network
+      db_net_vaultwarden: {}
+      nginx-proxy-network:
     volumes:
       - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_data:/data
       - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_templates:/templates      
@@ -51,7 +51,6 @@ services:
 
 networks:
   db_net_vaultwarden:
-    external: true
+    driver: bridge
   nginx-proxy-network:
     external: true
-
