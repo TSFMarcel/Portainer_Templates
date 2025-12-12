@@ -5,8 +5,8 @@ services:
     image: ainullcode/borg-ui:latest
     container_name: borg-web-ui
     restart: unless-stopped
-    ports:
-      - "8081:8081"
+   # ports:
+   #   - "8081:8081"
     networks:
       - nginx-proxy-network
     environment:
