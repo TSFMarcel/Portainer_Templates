@@ -79,7 +79,7 @@
           "description": "Muss mit https:// eingetragen werden."
         }
       ],
-      "administrator_only": true,
+      "administrator_only": true
     }
   ]
 }
