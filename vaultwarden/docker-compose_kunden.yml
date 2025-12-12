@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     networks:
-      db_net_"${KUNDENNAME}": {}
+      db_net_vaultwarden: {}
     volumes:
       - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_db:/var/lib/postgresql/data
     restart: unless-stopped
@@ -39,7 +39,7 @@ services:
       ENABLE_WEBSOCKET: true
       DOMAIN: "${DOMAIN_VAULTWARDEN}"
     networks:
-      db_net_"${KUNDENNAME}": {}
+      db_net_vaultwarden: {}
       nginx-proxy-network:
     volumes:
       - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_data:/data
@@ -50,7 +50,7 @@ services:
         condition: service_healthy
 
 networks:
-  db_net_"${KUNDENNAME}":
+  db_net_vaultwarden":
     driver: bridge
   nginx-proxy-network:
     external: true
