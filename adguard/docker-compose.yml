@@ -9,7 +9,7 @@ services:
       - nginx-proxy-network
     ports:
       # DNS
-      - "53:53
+      - "53:53"
       # DHCP
       - "67:67/udp"
       - "68:68/udp"
