@@ -2,9 +2,9 @@
   "version": "2",
   "templates": [
     {
-      "type": "3",
-      "title": "NGINX Proxy Manager (Web-GUI)",
-      "description": "NGINX Proxy Manager – UI zur Verwaltung von Reverse-Proxies, SSL-Zertifikaten und DNS-Einträgen. Der Container erzeugt selbst das benötigte Netzwerk `nginx-proxy-network`, sodass alle weiteren Web-GUI-Container problemlos darauf zugreifen können. Die Volumes werden unter `/mnt/volumes/nginx-proxy-manager` abgelegt, damit Ihre Konfiguration und Zertifikate stets persistent bleiben.",
+      "type": 3,
+      "title": "NGINX‑Proxy‑Manager (Web‑GUI)",
+      "description": "NGINX Proxy Manager – UI zur Verwaltung von Reverse‑Proxies, SSL‑Zertifikaten und DNS‑Einträgen. Der Container erzeugt selbst das benötigte Netzwerk `nginx-proxy-network`, sodass alle weiteren Web‑GUI‑Container problemlos darauf zugreifen können. Die Volumes werden unter `/mnt/volumes/nginx-proxy-manager` abgelegt, damit Ihre Konfiguration und Zertifikate stets persistent bleiben.",
       "platform": "linux",
       "categories": [
         "network",
@@ -14,8 +14,7 @@
       "logo": "",
       "repository": {
         "url": "https://github.com/TSFMarcel/Portainer_Templates",
-        "stackfile": "nginx-proxy-manager/docker-compose.yml",
-        "branch": "main"
+        "stackfile": "nginx-proxy-manager/docker-compose.yml"
       },
       "env": [],
       "administrator_only": true,
