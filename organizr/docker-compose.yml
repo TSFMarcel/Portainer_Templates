@@ -11,7 +11,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - fpm=${FPM}
-      - branch=master
+      - branch=v2-master
     ports:
       - "${VMIP}:${PORT80}:80/tcp"
     volumes:
