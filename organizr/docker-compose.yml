@@ -13,7 +13,7 @@ services:
       - fpm=${FPM}
       - branch=${BRANCH}
     ports:
-      - "${VMIP}:80:${PORT80}/tcp"
+      - "${VMIP}:${PORT80}:80/tcp"
     volumes:
       # Persistente Konfiguration – direkt unter /mnt/volumes/organizr/data ablegen
       - /mnt/volumes/organizr/data:/config
