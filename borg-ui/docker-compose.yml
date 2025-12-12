@@ -15,26 +15,12 @@ services:
       - PGID=${PGID}
     volumes:
       # Persistente Daten (nur intern)
-      - borg_data:/data
-      - borg_cache:/home/borg/.cache/borg
+      - /mnt/volumes/borg_data:/data
+      - /mnt/volumes/borg_cache:/home/borg/.cache/borg
       # Ordner, die gesichert werden sollen – bitte anpassen
-      - ${BORG_LOCAL_PATH}:/local:rw
+      - /${BORG_LOCAL_PATH}:/local:rw
       # Weitere Ordner können nach Bedarf als zusätzliche Volumes angehängt werden
-
-volumes:
-  borg_data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /mnt/volumes/borg-ui/data
-  borg_cache:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /mnt/volumes/borg-ui/cache
-
+      
 networks:
   nginx-proxy-network:
     external: true
