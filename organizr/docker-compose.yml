@@ -16,18 +16,10 @@ services:
     ports:
       - "80:80"
     volumes:
-      # Persistente Konfiguration
-      - organizr_data:/config
-      # Optional: Weitere Bind‑Mounts (z. B. für Medien)
-      # - /path/to/media:/media:ro
-
-volumes:
-  organizr_data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /mnt/volumes/organizr/data
+      # Persistente Konfiguration – direkt unter /mnt/volumes/organizr/data ablegen
+      - /mnt/volumes/organizr/data:/config
+      # Optional: weitere Bind‑Mounts (z. B. für Medien)
+      # - /mnt/data:/media:ro
 
 networks:
   nginx-proxy-network:
