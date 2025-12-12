@@ -16,7 +16,14 @@
         "url": "https://github.com/TSFMarcel/Portainer_Templates",
         "stackfile": "adguard/docker-compose.yml"
       },
-      "env": [],
+      "env": [
+        {
+          "name": "VMIP",
+          "label": "IP der Virtuellen Maschine",
+          "default": "192.168.1.2",
+          "description": "IP der Virtuellen Maschine für Portmapping"
+        }
+      ],
       "administrator_only": true,
       "id": 1
     },
