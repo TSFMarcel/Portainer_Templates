@@ -2,8 +2,8 @@
   "templates": [
     {
       "type": 3,
-      "title": "Vaultwarden + PostgreSQL + Nginx Proxy Manager",
-      "description": "Vaultwarden mit PostgreSQL in internem Netzwerk, Nginx Proxy Manager für Webzugriff, Ports 80/443/81 exposed.",
+      "title": "Vaultwarden + PostgreSQL Kundenspezifisch",
+      "description": "Vaultwarden inkl. PostgreSQL Datenbank. Achtung!!! Funktioniert nur wenn vorher der NGINX Proxy Manager installiert wurde.",
       "platform": "linux",
       "categories": ["security", "password-manager", "proxy"],
       "logo": "",
