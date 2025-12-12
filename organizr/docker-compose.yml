@@ -12,8 +12,8 @@ services:
       - PGID=${PGID}
       - fpm=${FPM}
       - branch=${BRANCH}
-    ports:
-      - "80:80"
+    #ports:
+    #  - "80:80"
     volumes:
       # Persistente Konfiguration – direkt unter /mnt/volumes/organizr/data ablegen
       - /mnt/volumes/organizr/data:/config
