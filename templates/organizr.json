@@ -35,12 +35,6 @@
           "label": "Git‑Branch / Version",
           "default": "v2-master",
           "description": "Branch/Tag, der beim Pull aus dem Docker‑Repository benutzt wird."
-        },
-        {
-          "name": "PORT80",
-          "label": "WebGUI Port 80",
-          "default": "80",
-          "description": "WebGUI Port 80 Mapping"
         }
       ],
       "administrator_only": true
