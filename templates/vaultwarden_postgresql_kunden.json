@@ -80,7 +80,6 @@
         }
       ],
       "administrator_only": true,
-      "predeploy": "docker network create nginx-proxy-network"
     }
   ]
 }
