@@ -14,7 +14,7 @@
       "logo": "",
       "repository": {
         "url": "https://github.com/TSFMarcel/Portainer_Templates",
-        "stackfile": "vaultwarden/docker-compose.yml"
+        "stackfile": "vaultwarden/docker-compose_kunden.yml"
       },
       "env": [
         {
