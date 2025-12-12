@@ -136,56 +136,6 @@
     },
     {
       "type": 3,
-      "title": "Organizr (Web‑Interface für Medien‑Home‑Server)",
-      "description": "Organizr – zentrales Dashboard für deine Heim‑/Home‑Server‑Services. Nutzt nginx‑proxy‑network und ein persistentes /config‑Volume. Default lauscht der Container auf Port 80",
-      "platform": "linux",
-      "categories": [
-        "media",
-        "dashboard",
-        "utilities"
-      ],
-      "logo": "",
-      "repository": {
-        "url": "https://github.com/TSFMarcel/Portainer_Templates",
-        "stackfile": "organizr/docker-compose.yml"
-      },
-      "env": [
-        {
-          "name": "PUID",
-          "label": "Benutzer‑ID (PUID)",
-          "default": "1000",
-          "description": "UID des Benutzers, unter dem der Container läuft."
-        },
-        {
-          "name": "PGID",
-          "label": "Gruppen‑ID (PGID)",
-          "default": "1000",
-          "description": "GID der Gruppe, unter der der Container läuft."
-        },
-        {
-          "name": "FPM",
-          "label": "Fast‑CGI aktivieren",
-          "default": "false",
-          "description": "Falls du Apache + PHP‑FPM nutzen willst, auf true setzen."
-        },
-        {
-          "name": "VMIP",
-          "label": "IP der Virtuellen Maschine",
-          "default": "192.168.1.2",
-          "description": "IP der Virtuellen Maschine für Portmapping"
-        },
-        {
-          "name": "PORT80",
-          "label": "WebGUI Port 80",
-          "default": "80",
-          "description": "Portmapping für Port 80 WebGUI"
-        }
-      ],
-      "administrator_only": true,
-      "id": 4
-    },
-    {
-      "type": 3,
       "title": "Vaultwarden + PostgreSQL Kundenspezifisch",
       "description": "Vaultwarden inkl. PostgreSQL Datenbank. Achtung!!! Funktioniert nur wenn vorher der NGINX Proxy Manager installiert wurde.",
       "platform": "linux",
@@ -268,7 +218,7 @@
         }
       ],
       "administrator_only": true,
-      "id": 5
+      "id": 4
     }
   ]
 }
