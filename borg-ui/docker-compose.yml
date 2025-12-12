@@ -6,7 +6,7 @@ services:
     container_name: borg-web-ui
     restart: unless-stopped
     ports:
-      - "${VMIP}:8081:${PORT8081}/tcp"
+      - "${VMIP}:${PORT8081}:8081/tcp"
     networks:
       - nginx-proxy-network
     environment:
