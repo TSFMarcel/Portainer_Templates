@@ -80,7 +80,7 @@
         }
       ],
       "administrator_only": true,
-      "predeploy": "docker network create db_net_vaultwarden || true"
+      "predeploy": "docker network create nginx-proxy-network"
     }
   ]
 }
