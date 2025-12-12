@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     networks:
-      - db_net_vaultwarden
+      db_net_vaultwarden: {}
     volumes:
       - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_db:/var/lib/postgresql/data
     restart: unless-stopped
