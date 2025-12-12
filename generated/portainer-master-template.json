@@ -182,7 +182,7 @@
         },
         {
           "name": "PORT80",
-          "label": "Proxy Port 80",
+          "label": "WebGUI Port 80",
           "default": "80",
           "description": "Portmapping für Port 80 WebGUI"
         }
