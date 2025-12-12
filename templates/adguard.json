@@ -1,0 +1,18 @@
+{
+  "templates": [
+    {
+      "type": 3,
+      "title": "AdGuard Home – DNS‑/Firewall‑Proxy",
+      "description": "AdGuard Home für DNS‑Blocking, Netzwerk‑Filtern und Web‑Interface. Nutzt das externe nginx‑proxy‑network.",
+      "platform": "linux",
+      "categories": ["dns", "firewall", "networking"],
+      "logo": "",
+      "repository": {
+        "url": "https://github.com/TSFMarcel/Portainer_Templates",
+        "stackfile": "adguard/docker-compose.yml"
+      },
+      "env": [],
+      "administrator_only": true
+    }
+  ]
+}
