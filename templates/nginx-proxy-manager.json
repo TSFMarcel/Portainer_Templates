@@ -13,7 +13,7 @@
         "branch": "main"
       },
       "env": [],
-      "administrator_only": true,
+      "administrator_only": true
     }
   ]
 }
