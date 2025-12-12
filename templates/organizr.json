@@ -35,6 +35,18 @@
           "label": "Git‑Branch / Version",
           "default": "v2-master",
           "description": "Branch/Tag, der beim Pull aus dem Docker‑Repository benutzt wird."
+        },
+        {
+          "name": "VMIP",
+          "label": "IP der Virtuellen Maschine",
+          "default": "192.168.1.2",
+          "description": "IP der Virtuellen Maschine für Portmapping"
+        },
+        {
+          "name": "PORT80",
+          "label": "Proxy Port 80",
+          "default": "80",
+          "description": "Portmapping für Port 80 WebGUI"
         }
       ],
       "administrator_only": true
