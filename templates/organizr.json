@@ -31,12 +31,6 @@
           "description": "Falls du Apache + PHP‑FPM nutzen willst, auf true setzen."
         },
         {
-          "name": "BRANCH",
-          "label": "Git‑Branch / Version",
-          "default": "latest",
-          "description": "Branch/Tag, der beim Pull aus dem Docker‑Repository benutzt wird."
-        },
-        {
           "name": "VMIP",
           "label": "IP der Virtuellen Maschine",
           "default": "192.168.1.2",
