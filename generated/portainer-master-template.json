@@ -19,7 +19,7 @@
       },
       "env": [],
       "administrator_only": true,
-      "predeploy": "docker network create nginx-proxy-network || true",
+      "predeploy": "docker network create nginx-proxy-network",
       "id": 1
     },
     {
@@ -106,7 +106,7 @@
         }
       ],
       "administrator_only": true,
-      "predeploy": "docker network create db_net_vaultwarden || true",
+      "predeploy": "docker network create nginx-proxy-network",
       "id": 2
     },
     {
