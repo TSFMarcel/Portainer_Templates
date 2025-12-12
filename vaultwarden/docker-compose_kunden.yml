@@ -51,7 +51,7 @@ services:
 
 networks:
   db_net_vaultwarden:
-    driver: bridge
+    external: true
   nginx-proxy-network:
     external: true
 
