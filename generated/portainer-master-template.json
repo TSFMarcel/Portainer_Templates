@@ -4,7 +4,7 @@
     {
       "type": 3,
       "title": "Borg‑UI Backup Manager",
-      "description": "Borg‑UI für die einfache Verwaltung von Backups – mit nginx‑proxy‑network und persistenten Volumes. In Nginx-Proxy-Manager einzubinden mit Containername:Port (in der Regel borg-web-ui:8081)",
+      "description": "Borg‑UI für die einfache Verwaltung von Backups – mit nginx‑proxy‑network und persistenten Volumes. In Nginx-Proxy-Manager einzubinden mit Containername:Port (in der Regel borg-web-ui:8081) Default Credentials admin / admin123",
       "platform": "linux",
       "categories": [
         "backup",
