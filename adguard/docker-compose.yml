@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  adguardhome:
+    image: adguard/adguardhome:latest
+    container_name: adguardhome
+    restart: unless-stopped
+    networks:
+      - nginx-proxy-network
+    environment:
+    ports:
+      # DNS
+      - "53:53/tcp"
+      - "53:53/udp"
+      # DHCP
+      - "67:67/udp"
+      - "68:68/udp"
+      # Web‑Interface
+      - "3000:3000/tcp"
+      # DNS‑SEC / DoH / DoT
+      - "853:853/tcp"
+      - "784:784/udp"
+      - "853:853/udp"
+      - "8853:8853/udp"
+      # HTTPS‑DNS (TLS)
+      - "5443:5443/tcp"
+      - "5443:5443/udp"
+    volumes:
+      # Persistente Arbeitsdaten
+      - /mnt/volumes/adguard/work:/opt/adguardhome/work
+      # Persistente Konfigurationsdaten
+      - /mnt/volumes/adguard/conf:/opt/adguardhome/conf
+
+networks:
+  nginx-proxy-network:
+    external: true
