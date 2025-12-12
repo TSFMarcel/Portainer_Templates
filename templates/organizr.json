@@ -33,7 +33,7 @@
         {
           "name": "BRANCH",
           "label": "Git‑Branch / Version",
-          "default": "v2-master",
+          "default": "latest",
           "description": "Branch/Tag, der beim Pull aus dem Docker‑Repository benutzt wird."
         },
         {
