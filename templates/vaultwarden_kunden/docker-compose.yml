@@ -10,7 +10,7 @@ services:
     networks:
       db_net_${KUNDENNAME}: {}
     volumes:
-      - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw-db:/var/lib/postgresql/data
+      - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_db:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"] # <-- HIER IST DIE ÄNDERUNG!
@@ -41,7 +41,7 @@ services:
       nginx-proxy-network:
     volumes:
       - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_data:/data
-      - /mnt/volumes/vaultwarden_${KUNDENNAME}/templates:/templates      
+      - /mnt/volumes/vaultwarden_${KUNDENNAME}/vw_templates:/templates      
     restart: unless-stopped
     depends_on:
       postgres:
