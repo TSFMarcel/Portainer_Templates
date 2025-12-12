@@ -17,7 +17,7 @@
           "label": "IP der Virtuellen Maschine",
           "default": "192.168.1.2",
           "description": "IP der Virtuellen Maschine für Portmapping"
-        },
+        }
       ],
       "administrator_only": true
     }
