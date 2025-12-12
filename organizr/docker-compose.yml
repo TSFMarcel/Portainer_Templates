@@ -12,7 +12,6 @@ services:
       - PGID=${PGID}
       - fpm=${FPM}
       - branch=${BRANCH}
-      - DOMAIN=${DOMAIN_ORGANIZR}
     ports:
       - "80:80"
     volumes:
