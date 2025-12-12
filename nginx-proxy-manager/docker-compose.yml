@@ -6,9 +6,9 @@ services:
     container_name: nginx-proxy-manager
     restart: unless-stopped
     ports:
-      - "80:80"   # Public HTTP Port
-      - "443:443" # Public HTTPS Port
-      - "81:81"   # Admin Web Port
+      - "${VMIP}:80:${PORT80}"   # Public HTTP Port
+      - "${VMIP}:443:${PORT443}" # Public HTTPS Port
+      - "${VMIP}:81:${PORT81}"   # Admin Web Port
     environment:
       TZ: "Europe/Berlin"
       # Optional:
