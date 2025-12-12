@@ -33,6 +33,7 @@ services:
       PUSH_IDENTITY_URI: "${PUSH_IDENTITY_URI}"
       LOG_FILE: "data/vaultwarden.log"
       TMP_FOLDER: "data/tmp"
+      TZ: "Europe/Berlin"
       ENABLE_WEBSOCKET: true
       DOMAIN: "${DOMAIN_VAULTWARDEN}"
     networks:
