@@ -1,0 +1,43 @@
+{
+  "templates": [
+    {
+      "type": 3,
+      "title": "Organizr (Web‑Interface für Medien‑Home‑Server)",
+      "description": "Organizr – zentrales Dashboard für deine Heim‑/Home‑Server‑Services. Nutzt nginx‑proxy‑network und ein persistentes /config‑Volume.",
+      "platform": "linux",
+      "categories": ["media", "dashboard", "utilities"],
+      "logo": "",
+      "repository": {
+        "url": "https://github.com/TSFMarcel/Portainer_Templates",
+        "stackfile": "organizr/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PUID",
+          "label": "Benutzer‑ID (PUID)",
+          "default": "1000",
+          "description": "UID des Benutzers, unter dem der Container läuft."
+        },
+        {
+          "name": "PGID",
+          "label": "Gruppen‑ID (PGID)",
+          "default": "1000",
+          "description": "GID der Gruppe, unter der der Container läuft."
+        },
+        {
+          "name": "FPM",
+          "label": "Fast‑CGI aktivieren",
+          "default": "false",
+          "description": "Falls du Apache + PHP‑FPM nutzen willst, auf true setzen."
+        },
+        {
+          "name": "BRANCH",
+          "label": "Git‑Branch / Version",
+          "default": "v2-master",
+          "description": "Branch/Tag, der beim Pull aus dem Docker‑Repository benutzt wird."
+        }
+      ],
+      "administrator_only": true
+    }
+  ]
+}
