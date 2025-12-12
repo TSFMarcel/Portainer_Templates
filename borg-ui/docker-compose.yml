@@ -10,9 +10,9 @@ services:
     networks:
       - nginx-proxy-network
     environment:
-      - TZ=${TZ}
-      - PUID=${PUID}
-      - PGID=${PGID}
+      - TZ: "${TZ}"
+      - PUID: "${PUID}"
+      - PGID: "${PGID}"
     volumes:
       # Persistente Daten (nur intern)
       - /mnt/volumes/borg_data:/data
